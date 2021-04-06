@@ -1,4 +1,7 @@
-# exit with error status code if user is not root
+#!/bin/bash
+
+set -e
+
 if [[ $EUID -ne 0 ]]; then
   echo "* root privileges are required to run this script (sudo)." 1>&2
   exit 1
